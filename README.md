@@ -28,4 +28,4 @@ python -m http.server 8000
 - Вносите изменения в файлы в `styles/` и `scripts/`, затем обновляйте страницу.
 - Если добавляете шрифты, обновите `fonts/fonts.css` и подключите в `index.html`.
 
-
+https://github.com/ekaterinafrangulova-blip/slozhno-sosredotochitsya-fd
