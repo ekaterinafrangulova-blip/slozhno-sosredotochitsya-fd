@@ -23,7 +23,7 @@
 }
 
 .section a {
-  color: var(--accent-color);
+  color: var(--text-color);
   text-shadow: 2px 2px 0 var(--accent-color);
   text-decoration: none;
 }
@@ -82,11 +82,11 @@
   text-transform: lowercase;
   font-size: 18px;
   line-height: 1;
-  color: var(--accent-color);
+  color: var(--heading-color);
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid color-mix(in srgb, var(--accent-color) 40%, transparent);
+  outline: 1px solid rgb(from var(--accent-color) r g b / 0.4);
 }
 
 .header__theme-menu-button:focus {
@@ -134,8 +134,8 @@
   inset-inline-end: 10px;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--heading-color);
+  border-block-start: 1px solid var(--heading-color);
 }
 
 .decorated-zone::after {
@@ -145,12 +145,13 @@
   inset-inline-start: 10px;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--heading-color);
+  border-block-end: 1px solid var(--heading-color);
 }
 
 .section {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding-inline: 10px;
 }
@@ -174,10 +175,7 @@ main .section:last-child {
   line-height: 1.3;
 }
 
-.section__subtitle {
-  font-size: 18px;
-  line-height: 1.3;
-}
+
 
 .section article p {
   margin-block-start: 10px;
@@ -213,9 +211,6 @@ main .section:last-child {
   .header {
     min-block-size: 1024px;
     padding: 20px;
-    grid-template-rows: fit-content fit-content 1fr;
-    align-items: center;
-
   }
 
   .header__title {
@@ -228,9 +223,6 @@ main .section:last-child {
     align-self: center;
   }
 
-  .header__theme-menu-list {
-    flex-direction: column;
-  }
 
   .header__subtitle {
     inline-size: 50%;
@@ -265,7 +257,7 @@ main .section:last-child {
 
   }
 
-  section-concentration .section__title {
+  .section-concentration .section__title {
     grid-area: title;
   }
 
@@ -289,7 +281,7 @@ main .section:last-child {
     gap: 20px;
   }
 
-  .section-gallery .section__subtitle {
+  .section-gallery .title-decor {
     grid-column: 1 / 4;
   }
 
@@ -356,6 +348,15 @@ main .section:last-child {
     min-block-size: 768px;
   }
 
+  .header__theme-menu {
+    justify-self: center;
+    align-self: self-start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
   .section-reasons {
     grid-template-columns: 315px 1fr;
   }
@@ -371,9 +372,7 @@ main .section:last-child {
     grid-template-areas: "title . ."
   }
 
-  .section-concentration .section__title {
-    grid-area: title;
-  }
+
 
   .section-concentration .section__article {
     grid-column-start: auto;
@@ -387,29 +386,15 @@ main .section:last-child {
   }
 
   .section-gallery {
-    grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "subtitle subtitle subtitle";
     ;
   }
 
-  .section-gallery .section__subtitle {
+  .section-gallery .title-decor {
     grid-area: subtitle;
   }
 
   .footer {
     min-block-size: 768px;
-  }
-
-
-  main .section {
-    margin-block-start: 80px;
-  }
-
-  main .section:first-child {
-    margin-block-start: 60px;
-  }
-
-  main .section:last-child {
-    margin-block-end: 60px;
   }
 }
