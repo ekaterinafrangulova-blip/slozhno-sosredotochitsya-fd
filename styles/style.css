@@ -250,11 +250,16 @@ main .section:last-child {
   }
 
   .section-concentration {
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "title ....";
   }
 
   .section-concentration .section__title {
     grid-area: title;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
   }
 
   .section-concentration .section__article {
@@ -372,7 +377,7 @@ main .section:last-child {
 
   .section-concentration {
     grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
-    grid-template-areas: "title . . .";
+    grid-template-areas: "title . . ";
   }
 
   .section-concentration .section__title {
