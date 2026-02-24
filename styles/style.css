@@ -376,22 +376,24 @@ main .section:last-child {
   }
 
   .section-concentration {
-    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
-    grid-template-areas: "title . . ";
+    grid-template-columns: repeat(auto-fill, 314px);
+    grid-template-areas: initial;
   }
 
   .section-concentration .section__title {
-    grid-area: title;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column: 1/-1;
+    grid-row: 1;
+    grid-column: 1;
   }
 
   .section-concentration .section__article {
-    grid-column-start: auto;
-    grid-column-end: auto;
-    grid-row-start: auto;
-    grid-row-end: auto;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .section-concentration::after {
+    content: "";
+    grid-column: 2 / -1;
+    grid-row: 1;
   }
 
   .section-tips {
