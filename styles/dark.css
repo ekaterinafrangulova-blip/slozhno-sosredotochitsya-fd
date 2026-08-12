@@ -1,10 +1,10 @@
 :root.theme-dark {
-  --bg-color: #000028;
-  --text-color: #f1b2ce;
-  --heading-color: #ff0070;
-  --accent-color: #ff0070;
-  --title-decor-color: #000028;
-  --title-color: #db00ff;
+  --bg-color: #05010f;
+  --text-color: #e0faff;
+  --heading-color: #00f6ff;
+  --accent-color: #ff00c8;
+  --title-decor-color: #05010f;
+  --title-color: #00f6ff;
   --cover-image: url(../images/cover-image-dark.png);
 }
  
