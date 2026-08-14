@@ -133,15 +133,36 @@
     </section>
     <section class="section section-gallery">
       <h2 class="title-decor">А можно в картинках?</h2>
-      <img class="section-gallery__image" src="./images/sunset.png"
-        alt="Закат солнца над морем с облаками в оранжево-розовых тонах" loading="lazy">
-      <img class="section-gallery__image section-gallery__image__block" src="./images/ice-cream.png"
-        alt="Мороженое разных сортов с фруктами и зонтиками в яркой посуде" loading="lazy">
-      <img class="section-gallery__image section-gallery__image__block" src="./images/tape.png"
-        alt="Аудиокассета на фоне разноцветных пастельных блоков" loading="lazy">
-      <img class="section-gallery__image" src="./images/books.png" alt="Стопка книг с чашкой чая сверху" loading="lazy">
-      <img class="section-gallery__image" src="./images/street.png"
-        alt="Улица города в неоновом фиолетово-розовом освещении" loading="lazy">
+      <div class="section-gallery__carousel" role="region" aria-roledescription="карусель" aria-label="Галерея изображений">
+        <div class="section-gallery__viewport">
+          <ul class="section-gallery__track">
+            <li class="section-gallery__slide">
+              <img class="section-gallery__image" src="./images/sunset.png"
+                alt="Закат солнца над морем с облаками в оранжево-розовых тонах" loading="lazy">
+            </li>
+            <li class="section-gallery__slide">
+              <img class="section-gallery__image" src="./images/ice-cream.png"
+                alt="Мороженое разных сортов с фруктами и зонтиками в яркой посуде" loading="lazy">
+            </li>
+            <li class="section-gallery__slide">
+              <img class="section-gallery__image" src="./images/tape.png"
+                alt="Аудиокассета на фоне разноцветных пастельных блоков" loading="lazy">
+            </li>
+            <li class="section-gallery__slide">
+              <img class="section-gallery__image" src="./images/books.png" alt="Стопка книг с чашкой чая сверху" loading="lazy">
+            </li>
+            <li class="section-gallery__slide">
+              <img class="section-gallery__image" src="./images/street.png"
+                alt="Улица города в неоновом фиолетово-розовом освещении" loading="lazy">
+            </li>
+          </ul>
+        </div>
+        <div class="section-gallery__controls">
+          <button type="button" class="section-gallery__button section-gallery__button_prev" aria-label="Предыдущее изображение">Назад</button>
+          <p class="section-gallery__counter" aria-live="polite">1 / 5</p>
+          <button type="button" class="section-gallery__button section-gallery__button_next" aria-label="Следующее изображение">Далее</button>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="footer decorated-zone">

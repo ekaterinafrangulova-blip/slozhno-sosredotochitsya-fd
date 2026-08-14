@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setActiveButton(themeButtons, chosenTheme);
     });
   });
+
+  initGalleryCarousel();
 });
 
 function setTheme(theme) {
@@ -49,4 +51,36 @@ function setActiveButton(buttonsArray, theme) {
     autoButton.classList.add('header__theme-menu-button_active');
     autoButton.setAttribute('disabled', true);
   }
+}
+
+function initGalleryCarousel() {
+  const track = document.querySelector('.section-gallery__track');
+  const slides = [...document.querySelectorAll('.section-gallery__slide')];
+  const prevButton = document.querySelector('.section-gallery__button_prev');
+  const nextButton = document.querySelector('.section-gallery__button_next');
+  const counter = document.querySelector('.section-gallery__counter');
+  const slideCount = slides.length;
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    counter.textContent = `${currentIndex + 1} / ${slideCount}`;
+    slides.forEach((slide, index) => {
+      const isCurrent = index === currentIndex;
+      slide.toggleAttribute('inert', !isCurrent);
+      slide.setAttribute('aria-hidden', String(!isCurrent));
+    });
+  }
+
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+    updateCarousel();
+  });
+
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slideCount;
+    updateCarousel();
+  });
+
+  updateCarousel();
 }
